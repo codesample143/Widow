@@ -6,6 +6,7 @@
 #include <thread>
 
 //benchmark code entirely stolen from https://gist.github.com/abcdabcd987/53b7aa6fdb8f7dbe46798fa6df2f5871
+//slightly repurposed for generics, I guess.
 std::string random_string(int len) {
     static const char alphanum[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     static std::mt19937 gen(123);

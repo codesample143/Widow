@@ -8,6 +8,10 @@
 #include <optional>    
 #include <functional> 
 
+//https://www.zhihu.com/question/67850850/answer/257301293
+
+
+//add 1. persistence, 2. networking, 3. eviction
 using namespace std;
 
 template <typename K, typename V>
@@ -76,12 +80,12 @@ public:
     bigdb(size_t num_maps) : num_map(num_maps), replicated_map(num_maps, bigdbsharded<K, V>(16)) {}
     
     void put(const K &key, const V &value){
-        for(auto& shard : replicated_map) {
+        for(auto& shard : replicated_map){ 
             shard.put(key, value);
         }
     }
 
     void get(const K & key){
-
+        //load balancer here? seperate requests out for data and see how fast we can access elements versus standard, modify benchmark program
     }
 };

@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(CURL REQUIRED)
 
 
-
 add_executable(search 
     src/main.cpp
     src/core/crawler.cpp
